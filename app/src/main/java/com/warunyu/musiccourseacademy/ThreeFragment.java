@@ -26,7 +26,6 @@ public class ThreeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_three, container, false);
 
-        txtFrag3= (TextView) rootView.findViewById(R.id.txtFrag3);
 
         return rootView;
     }

@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#3dd18c"
+    android:background="@drawable/login_activity"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
@@ -15,7 +15,7 @@
         android:padding="15dp"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:background="#ffffffff">
+        android:background="#00ffffff">
 
         <TextView
             android:layout_width="wrap_content"

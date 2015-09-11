@@ -29,4 +29,6 @@ dependencies {
     compile 'com.daimajia.easing:library:1.0.0@aar'
     compile 'com.daimajia.androidanimations:library:1.0.6@aar'
     compile 'com.nineoldandroids:library:2.4.+'
+    compile 'com.google.android.gms:play-services:6.1.+'
+
 }

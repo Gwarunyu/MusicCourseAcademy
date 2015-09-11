@@ -3,6 +3,7 @@ package com.warunyu.musiccourseacademy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,6 +17,7 @@ public class OneFragment extends Fragment {
 
     private TextView txtFrag1;
     private Button btn_fragment1;
+
 
     public static OneFragment newInstance() {
         OneFragment fragment = new OneFragment();

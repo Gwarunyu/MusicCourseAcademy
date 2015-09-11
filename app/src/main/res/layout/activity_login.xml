@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#3dd18c"
+    android:background="@drawable/login_activity"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:id="@+id/relative_layout"
@@ -15,25 +15,28 @@
         android:layout_height="380dp"
         android:orientation="vertical"
         android:padding="15dp"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:background="#ffffffff">
+        android:baselineAligned="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_title"
             android:textSize="30sp"
-            android:textColor="#3dd18c"
+            android:textColor="#f8ffff"
             android:layout_marginBottom="16dp"
-           />
+            android:id="@+id/txtTitle" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:id="@+id/username"
-            android:hint="@string/username_title"/>
+            android:hint="@string/username_title" />
 
         <EditText
             android:layout_width="match_parent"
@@ -41,12 +44,11 @@
             android:padding="16dp"
             android:id="@+id/password"
             android:inputType="textPassword"
-            android:hint="@string/password_title"/>
+            android:hint="@string/password_title" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button_login"
-            android:background="#3dd18c"
             android:textColor="#ffffff"
             android:text="@string/button_login"
             android:textSize="25sp"

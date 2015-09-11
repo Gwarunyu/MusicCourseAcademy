@@ -1,6 +1,10 @@
 package com.warunyu.musiccourseacademy;
 
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,37 +16,55 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class ClassOne extends AppCompatActivity {
 
-    private Button ClickOn;
-    private TextView TextAnime;
-    private ImageView img1;
+    TextView text1,text2,text3;
+Button btn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_one);
 
-        ClickOn = (Button) findViewById(R.id.btn_anime);
-        TextAnime = (TextView) findViewById(R.id.txt_anime);
-        img1 = (ImageView) findViewById(R.id.imageView1);
-
-        img1.setOnClickListener(new View.OnClickListener() {
+        btn_next = (Button) findViewById(R.id.btn_next);
+        btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator anime = ObjectAnimator.ofFloat(img1, View.ALPHA, 0f);
-                anime.setDuration(1000);
-                anime.start();
+                Intent intent = new Intent(ClassOne.this,Practice1.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        ClickOn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                YoYo.with(Techniques.Bounce).duration(700).playOn(TextAnime);
-            }
-        });
+        text1 = (TextView) findViewById(R.id.txt1);
+        text2 = (TextView) findViewById(R.id.txt2);
+        text3 = (TextView) findViewById(R.id.txt3);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Aller_Lt.ttf");
+        text1.setTypeface(typeface);
+        text2.setTypeface(typeface);
+        text3.setTypeface(typeface);
+
+        /*AdRequest.Builder adBuilder = new AdRequest.Builder();
+        AdRequest adRequest = adBuilder.build();
+        AdView adView = (AdView)findViewById(R.id.adView);
+        adView.loadAd(adRequest);*/
 
     }
+
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Exit Confirm").setMessage("Do u wanna Exit This Course").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        })
+                .setNegativeButton("No", null).show();
+
+    }
+
 }

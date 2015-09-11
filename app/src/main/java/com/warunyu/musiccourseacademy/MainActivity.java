@@ -5,6 +5,8 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,13 +17,13 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends AppCompatActivity {
 
     ViewPager pager;
-    //private final String KEY_USERNAME = "username";
-    //private final String KEY_LEVEL = "MyLevel";
-
+    TextView txtAdvice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,12 @@ public class MainActivity extends AppCompatActivity {
         MyPageAdapter adapter = new MyPageAdapter(getSupportFragmentManager());
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
-        /*SharedPreferences sp = getSharedPreferences("pref_user", MODE_PRIVATE);
-        int user_level = sp.getInt("MyLevel", -1);
 
-        txt_username = (TextView) findViewById(R.id.txtUsername);
-        txt_username.setText(sp.getString(KEY_USERNAME, ""));
+        pager.setPageTransformer(true, new MyPageTransformer());
 
-        txt_level = (TextView) findViewById(R.id.txtLevel);
-        txt_level.setText(String.valueOf(user_level));
-            */
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Aller_Lt.ttf");
+        txtAdvice = (TextView) findViewById(R.id.textViewAdvice);
+        txtAdvice.setTypeface(typeface);
 
     }
 

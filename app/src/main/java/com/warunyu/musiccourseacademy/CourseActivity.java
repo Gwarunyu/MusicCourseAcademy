@@ -8,53 +8,43 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class CourseActivity extends AppCompatActivity {
+
+    private SharedPreferences.Editor mEditor;
+
+    private final String KEY_PREFS = "pref_user";
+    private final String KEY_USERNAME = "username";
+    private final String KEY_LEVEL = "MyLevel";
+
+    Button btn_course_1;
+    TextView txt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
+        final SharedPreferences sp = getSharedPreferences("pref_user", MODE_PRIVATE);
+        final int user_level = sp.getInt("MyLevel", -1);
 
-        Integer[] resID = {R.drawable.ic_launcher,
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher};
+        if (user_level > 1) {
+            txt1= (TextView) findViewById(R.id.textView1);
+            txt1.setText("Pass");
+        }
 
-        String[] strTitle = {"Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"};
-
-        String[] strDesc = {"Chord", "Note", "Scale", "Jazz", "Classic"};
-
-        CustomAdapter adapter = new CustomAdapter(getApplicationContext(), strTitle, strDesc, resID);
-
-        ListView listView = (ListView) findViewById(R.id.listViewCourse);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        btn_course_1 = (Button) findViewById(R.id.btn_course_1);
+        btn_course_1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                Intent intent;
-                switch (arg2){
-                    case 0 : intent = new Intent(getApplicationContext(),ClassOne.class);
-                        startActivity(intent);
-                        break;
-                    case 1 : intent = new Intent(getApplicationContext(),CourseActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 2 : intent = new Intent(getApplicationContext(),CourseActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 3 : intent = new Intent(getApplicationContext(),CourseActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 4 : intent = new Intent(getApplicationContext(),CourseActivity.class);
-                        startActivity(intent);
-                        break;
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(CourseActivity.this, ClassOne.class);
+                startActivity(intent);
             }
         });
+
 
     }
 }

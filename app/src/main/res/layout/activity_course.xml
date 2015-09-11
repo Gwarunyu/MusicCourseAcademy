@@ -9,17 +9,80 @@
 
 
     <LinearLayout
+        android:id="@+id/line1"
         android:orientation="vertical"
         android:background="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true">
 
-        <ListView
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listViewCourse" />
+            android:text="New Button"
+            android:id="@+id/btn_course_1"
+
+            android:layout_gravity="right" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="Reading Skill"
+            android:textColor="#0b0000"
+            android:id="@+id/textView1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#cccccc"
+        android:id="@+id/line2"
+        android:layout_below="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clef"
+            android:textSize="30dp"
+            android:textColor="#0b0000"
+            android:id="@+id/textView2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click"
+            android:id="@+id/btn_course_2"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#cccccc"
+        android:id="@+id/line3"
+        android:layout_below="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Key"
+            android:textSize="30dp"
+            android:textColor="#0b0000"
+            android:id="@+id/textView3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click"
+            android:id="@+id/btn_course_3"
+            android:layout_gravity="right"/>
+
     </LinearLayout>
 
 </RelativeLayout>

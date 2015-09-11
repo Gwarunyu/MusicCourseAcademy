@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<RelativeLayout
+android:layout_toLeftOf="@+id/relaRight"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e6e6e6" >
+    android:background="@drawable/elec_guitar"
+    android:paddingLeft="30dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Fragment Three"
-        android:id="@+id/txtFrag3"
-        />
+        android:text="Drum Tutorial"
+        android:id="@+id/txtFrag1"
+        android:allowUndo="false"
+        android:textColor="#d9ff232a"
+        android:textSize="40dp"
+        android:autoText="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btn_fragment1"
+        android:layout_below="@+id/txtFrag1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
+</RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/relaRight"
+    android:background="#637a69"
+    android:layout_width="15dp"
+    android:layout_alignParentRight="true"
+    android:layout_height="match_parent">
+
+</RelativeLayout>
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.warunyu.musiccourseacademy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 YoYo.with(Techniques.Pulse).duration(300).playOn(mLogIn);
                 checkLogIn();
             }
@@ -60,10 +62,27 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 
-    public void hideKeyboard(View view){
-        InputMethodManager mng = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    public void onPause() {
+        super.onPause();
+
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager mng = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mng.hideSoftInputFromWindow(mUsername.getWindowToken(), 0);
     }
 
@@ -80,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(mContext, MainActivity.class);
             startActivity(intent);
 
-            overridePendingTransition(R.animator.slide1,R.animator.slide2);
+            overridePendingTransition(R.animator.slide1, R.animator.slide2);
 
         } else {
 
